@@ -311,34 +311,30 @@ export default createReactClass({
     noValidate: PropTypes.bool
   },
 
-  getDefaultProps() {
-    const language = typeof window !== 'undefined' && window.navigator ? (window.navigator.userLanguage || window.navigator.language || '').toLowerCase() : '';
-    const dateFormat = !language || language === 'en-us' ? 'MM/DD/YYYY' : 'DD/MM/YYYY';
-    return {
-      cellPadding: '5px',
-      dayLabels: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-      monthLabels: ['January', 'February', 'March', 'April',
-        'May', 'June', 'July', 'August', 'September',
-        'October', 'November', 'December'],
-      clearButtonElement: '×',
-      previousButtonElement: '<',
-      nextButtonElement: '>',
-      calendarPlacement: 'bottom',
-      dateFormat: dateFormat,
-      showClearButton: true,
-      autoFocus: false,
-      disabled: false,
-      showTodayButton: false,
-      todayButtonLabel: 'Today',
-      autoComplete: 'on',
-      showWeeks: false,
-      instanceCount: instanceCount++,
-      style: {
-        width: '100%'
-      },
-      roundedCorners: false,
-      noValidate: false
-    };
+  defaultProps: {
+    cellPadding: '5px',
+    dayLabels: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+    monthLabels: ['January', 'February', 'March', 'April',
+      'May', 'June', 'July', 'August', 'September',
+      'October', 'November', 'December'],
+    clearButtonElement: '×',
+    previousButtonElement: '<',
+    nextButtonElement: '>',
+    calendarPlacement: 'bottom',
+    dateFormat: 'MM/DD/YYYY',
+    showClearButton: true,
+    autoFocus: false,
+    disabled: false,
+    showTodayButton: false,
+    todayButtonLabel: 'Today',
+    autoComplete: 'on',
+    showWeeks: false,
+    instanceCount: instanceCount++,
+    style: {
+      width: '100%'
+    },
+    roundedCorners: false,
+    noValidate: false
   },
 
   getInitialState() {
