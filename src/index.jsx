@@ -11,7 +11,7 @@ import PropTypes from 'prop-types';
 
 let instanceCount = 0;
 
-class DatePickerHeader extends React.Component {
+class CalendarHeader extends React.Component {
   displayingMinMonth = () => {
     if (!this.props.minDate) return false;
 
@@ -55,7 +55,7 @@ class DatePickerHeader extends React.Component {
   }
 };
 
-DatePickerHeader.propTypes = {
+CalendarHeader.propTypes = {
   displayDate: PropTypes.object.isRequired,
   minDate: PropTypes.string,
   maxDate: PropTypes.string,
@@ -73,7 +73,7 @@ DatePickerHeader.propTypes = {
 
 const daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
-class DatePickerCalendar extends React.Component {
+class Calendar extends React.Component {
   handleClick = (e) => {
     const day = e.currentTarget.getAttribute('data-day');
     const newSelectedDate = this.setTimeToNoon(new Date(this.props.displayDate));
@@ -225,7 +225,7 @@ class DatePickerCalendar extends React.Component {
   }
 };
 
-DatePickerCalendar.propTypes = {
+Calendar.propTypes = {
   selectedDate: PropTypes.object,
   displayDate: PropTypes.object.isRequired,
   minDate: PropTypes.string,
